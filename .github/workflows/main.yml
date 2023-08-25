@@ -1,0 +1,52 @@
+name: Test project
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions: write-all
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js env
+        uses: actions/setup-node@v3.8.1
+      - name: Check versions
+        run: |
+          node --version
+          npm --version
+      - name: Install required dependencies
+        run: sudo npm install --save-dev
+      - name: Test project
+        run: |
+          npm run build
+          npm run test
+      - name: Install document dependencies
+        run: cd ./doc && sudo npm install --save-dev
+      - name: Build document
+        run: cd ./doc && npm run build
+      - name: Init git
+        run: |
+          git config --global user.email stellarishs@163.com
+          git config --global user.name Embers-of-the-Fire
+      - name: Cache document
+        run: |
+          cp -rf ./doc/.vitepress/dist/ ../docdist
+          rm ./* -rf && rm ./.* -rf
+          cp -rf ../docdist/* .
+          git init
+          git remote add origin https://github.com/Embers-of-the-Fire/result-ts.git
+          git branch -M gh-pages
+          git add .
+          git commit -am "auto deploy commit"
+      - name: Publish document
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          branch: gh-pages
+          force: true
+

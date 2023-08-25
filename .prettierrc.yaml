@@ -1,0 +1,11 @@
+tabWidth: 4
+printWidth: 120
+overrides:
+  - files:
+      - "*.json"
+      - "*.config.ts"
+      - "*.config.js"
+    options:
+      printWidth: 80
+      tabWidth: 2
+      useTabs: false

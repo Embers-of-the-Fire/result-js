@@ -1,0 +1,20 @@
+{
+  "name": "result-ts-doc",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "index.js",
+  "author": "Embers-of-the-Fire",
+  "license": "MIT OR Apache-2.0",
+  "scripts": {
+    "dev": "node typedoc.cjs && vitepress dev .",
+    "build": "node typedoc.cjs && vitepress build .",
+    "serve": "node typedoc.cjs && vitepress serve ."
+  },
+  "private": true,
+  "devDependencies": {
+    "typedoc": "^0.24.8",
+    "typedoc-plugin-markdown": "^3.15.4",
+    "vitepress": "^1.0.0-rc.4",
+    "vue": "^3.3.4"
+  }
+}
