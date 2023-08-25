@@ -1,5 +1,5 @@
 {
-  "name": "result-js",
+  "name": "resultjs",
   "version": "1.0.0",
   "description": "elegant result lib",
   "main": "./dist/lib.js",
