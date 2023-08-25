@@ -36,7 +36,7 @@ jobs:
       - name: Cache document
         run: |
           cp -rf ./doc/.vitepress/dist/ ../docdist
-          sudo rm ./* -rf && sudo rm ./.* -rf
+          ls -la | grep  "^[^t].*" | awk '{print $9}'| sed -n '3,$ p' | sudo xargs rm -rf
           cp -rf ../docdist/* .
           git init
           git remote add origin https://github.com/Embers-of-the-Fire/result-ts.git
