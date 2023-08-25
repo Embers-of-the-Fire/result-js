@@ -1,5 +1,5 @@
 {
-  "name": "result-ts",
+  "name": "result-js",
   "version": "1.0.0",
   "description": "elegant result lib",
   "main": "./dist/lib.js",
@@ -13,6 +13,9 @@
   "keywords": [
     "Result",
     "Error",
+    "Monad",
+    "Function",
+    "FP",
     "TypeScript"
   ],
   "author": "Embers-of-the-Fire",
