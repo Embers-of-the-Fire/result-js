@@ -1,9 +1,12 @@
 {
-  "name": "result-js",
+  "name": "@embers-of-the-fire/resultjs",
   "version": "1.0.0",
   "description": "elegant result lib",
   "main": "./dist/lib.js",
   "typings": "./dist/lib.d.ts",
+  "repository": "https://github.com/Embers-of-the-Fire/result-js",
+  "homepage": "https://github.com/Embers-of-the-Fire/result-js",
+  "readme": "README.md",
   "scripts": {
     "test": "jest",
     "build": "tsc",

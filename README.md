@@ -18,7 +18,7 @@ First, make sure that you've already installed [nodejs][].
 Then, in your terminal, run the following command:
 
 ```bash
-npm install --save-dev result-js
+npm install --save-dev @embers-of-the-fire/resultjs
 ```
 
 [nodejs]: https://nodejs.org/
@@ -30,7 +30,7 @@ After installing the library, you could use it in your project.
 First, import the core structure:
 
 ```ts
-import { Result } from 'result-js';
+import { Result } from '@embers-of-the-fire/resultjs';
 ```
 
 Then, turn your current union object into `Result` object. A `Result<T, E>` object views `T` as success value and `E` as failure value. You could construct a result by calling:
@@ -42,7 +42,7 @@ let failure: Result<number, string> = Result.Err('error'); // This creates a fai
 
 For more information about the FP API, see [the documentation][].
 
-[the documentation]: https://embers-of-the-fire.github.io/result-ts/
+[the documentation]: https://embers-of-the-fire.github.io/result-js/
 
 ## License
 

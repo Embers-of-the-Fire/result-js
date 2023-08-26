@@ -1,8 +1,8 @@
-name: Test project
+name: Build documentation
 on:
   push:
-  pull_request:
-  workflow_dispatch:
+    branches:
+      - main
 
 permissions: write-all
 
@@ -19,12 +19,6 @@ jobs:
         run: |
           node --version
           npm --version
-      - name: Install required dependencies
-        run: sudo npm install --save-dev
-      - name: Test project
-        run: |
-          sudo npm run build
-          sudo npm run test
       - name: Install document dependencies
         run: cd ./doc && sudo npm install --save-dev
       - name: Build document
@@ -49,4 +43,3 @@ jobs:
           github_token: ${{ secrets.GH_TOKEN }}
           branch: gh-pages
           force: true
-
