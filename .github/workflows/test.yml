@@ -1,0 +1,26 @@
+name: Test project
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js env
+        uses: actions/setup-node@v3.8.1
+      - name: Check versions
+        run: |
+          node --version
+          npm --version
+      - name: Install required dependencies
+        run: sudo npm install --save-dev
+      - name: Test project
+        run: |
+          sudo npm run build
+          sudo npm run test
+
